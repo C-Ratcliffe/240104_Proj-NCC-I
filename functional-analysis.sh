@@ -30,7 +30,17 @@ do
 			then
 				cp -r ${fsdir}fsaverage ${fmridir}sourcedata/freesurfer/
 			fi
-			fmriprep-docker $rawdir $fmridir --participant-label $subname --use-syn-sdc --ignore fieldmaps --fs-license-file ~/freesurfer/license.txt -w $workdir --output-spaces MNI152NLin2009cAsym --clean-workdir --fs-subjects-dir ${fsdir}
+			fmriprep-docker \
+				$rawdir \
+				$fmridir --participant-label \
+				$subname \
+				--use-syn-sdc \
+				--ignore fieldmaps \
+				--fs-license-file ~/freesurfer/license.txt \
+				-w $workdir \
+				--output-spaces MNI152NLin2009cAsym \
+				--clean-workdir \
+				--fs-subjects-dir ${fsdir}
 		done
 		
 	elif [[ $funcselect == 3 ]]
