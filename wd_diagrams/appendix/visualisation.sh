@@ -1,0 +1,65 @@
+mrview \
+	template_mask-glass.mif \
+	-overlay.load all_cyst-dilate_template-space.mif \
+	-reset \
+	-overlay.interpolation 0 \
+	-overlay.intensity 0,5 \
+	-overlay.threshold_min 0.1 \
+	-plane 2 \
+	-noannotation \
+	-fov 300 \
+	-focus 1,17,-15 \
+	-capture.prefix cyst-050 \
+	-capture.grab \
+	-focus 1,17,-3 \
+	-capture.prefix cyst-060 \
+	-capture.grab \
+	-focus 1,17,8 \
+	-capture.prefix cyst-070 \
+	-capture.grab \
+	-focus 1,17,21 \
+	-capture.prefix cyst-080 \
+	-capture.grab \
+	-focus 1,17,33 \
+	-capture.prefix cyst-090 \
+	-capture.grab \
+	-focus 1,17,46 \
+	-capture.prefix cyst-100 \
+	-capture.grab \
+	-focus 1,17,58 \
+	-capture.prefix cyst-110 \
+	-capture.grab \
+	-exit
+	
+mrview \
+	template_mask-glass.mif \
+	-overlay.load all_oedema_template-space.mif \
+	-reset \
+	-overlay.interpolation 0 \
+	-overlay.intensity 0,5 \
+	-overlay.threshold_min 0.1 \
+	-plane 2 \
+	-noannotation \
+	-fov 300 \
+	-focus 1,17,-15 \
+	-capture.prefix oedema-050 \
+	-capture.grab \
+	-focus 1,17,-3 \
+	-capture.prefix oedema-060 \
+	-capture.grab \
+	-focus 1,17,8 \
+	-capture.prefix oedema-070 \
+	-capture.grab \
+	-focus 1,17,21 \
+	-capture.prefix oedema-080 \
+	-capture.grab \
+	-focus 1,17,33 \
+	-capture.prefix oedema-090 \
+	-capture.grab \
+	-focus 1,17,46 \
+	-capture.prefix oedema-100 \
+	-capture.grab \
+	-focus 1,17,58 \
+	-capture.prefix oedema-110 \
+	-capture.grab \
+	-exit  
