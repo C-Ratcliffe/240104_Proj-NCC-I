@@ -1,0 +1,55 @@
+#! /bin/zsh
+
+# This is the master image processing script for Corey Ratcliffe's NCC thesis project
+# Compatible with zsh (due to 'read' syntax)
+# Dependencies: MRTrix3, TractSeg, fsl, MRIcroGL, r statistics
+# Authors: Ratcliffe, Corey
+# Last edited: 06.01.25
+
+studydir=~/Documents/WD_imaging/240104_Proj-NCC-I/
+appdir=${studydir}wd_shell/
+sourcedir=~${studydir}sourcedata/
+rawdir=${studydir}rawdata/
+derivdir=${studydir}derivatives/
+
+while true
+do
+	echo Choose option:
+	echo
+	echo 1. Data handling
+	echo 2. Structural analysis
+	echo 3. Diffusion analysis
+	echo 4. Functional analysis
+	echo 5. Exit
+	echo
+	read "selection?Selection (1/5): "
+
+	if [[ $selection == 1 ]]
+	then
+		source ${appdir}data-handling.sh
+		continue
+		
+	elif [[ $selection == 2 ]]
+	then
+		source ${appdir}structural-analysis.sh
+		continue
+
+	elif [[ $selection == 3 ]]
+	then
+		source ${appdir}diffusion-analysis.sh
+		continue
+
+	elif [[ $selection == 4 ]]
+	then
+		source ${appdir}functional-analysis.sh
+		continue
+
+	elif [[ $selection == 5 ]]
+	then
+		echo Processing skipped.
+		exit
+
+	else
+		echo Invalid selection.
+	fi
+done
